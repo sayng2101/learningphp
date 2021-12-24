@@ -1,0 +1,67 @@
+* {
+    margin-top: 0;
+    box-sizing: border-box;
+}
+.banner {
+    width: 900px;
+    height: 150px;
+    background: blue;
+    margin-bottom: 2px;
+}
+
+.banner p {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    font-size: 30px;
+}
+
+.body {
+    margin-top: 50px;
+    margin-left: 500px;
+    width: 902px;
+    height: 640px;
+    border: 2px solid black;
+}
+
+.menu {
+    width: 200px;
+    height: 478px;
+    float: left;
+    border: 1px solid black;
+    margin-left: 2px;
+}
+.menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    text-decoration: none;
+    border: 1px solid black;
+}
+
+.menu a.active {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.form {
+     width: 689px;
+    height: 478px;
+    float: left;
+    border: 1px solid black;
+    margin-left: 2px;
+    padding-left: 20px;
+}
+
+.form h1 {
+    color: blue;
+    padding-left: 150px;
+}
+
+.form p {
+    color: red;
+}
+
+
