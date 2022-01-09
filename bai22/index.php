@@ -10,15 +10,23 @@
     <?php
     $start = $_POST["batdau"];
     $end = $_POST["ketthuc"];
-    if($start < $end){
-        if($start >= 17 && $start <= 24){
-            $tinhtien = ($end - $start) * 45000;
-        }elseif($start >= 10 && $start <= 17){
-            $tinhtien = ($end - $start) * 20000;
+    if($start >= 10 && $start < 24 && $end > 10 && $end <= 24){
+        if($start < $end){
+            if($start <= 17 && $end == 17)  {
+                $tinhtien = ($end - $start)*20000;
+            }elseif($start >= 17 && $end == 24) {
+                $tinhtien = ($end - $start)*45000;
+            }else{
+                $tien1 = (17 - $start)*20000;
+                $tien2 = ($end - 17)*45000;
+                $tinhtien = $tien1 + $tien2;
+            }
+        }elseif($start>$end){
+            $tinhtien = "Gio bat dau phai lon hon gio ket thuc";
         }
-    }else{
-        $tinhtien =  "Thoi gian ket thuc phai > thoi gian bat dau";
-    }
+    }elseif($start < 10 || $end <= 10){
+            $tinhtien = "Day la gio nghi";
+        }
     ?>
     <form action="index.php" method="post">
         <p>Tính tiền karaoke</p>

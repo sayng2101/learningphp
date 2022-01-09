@@ -12,7 +12,12 @@
     $chisocu = $_POST["chisocu"];
     $chisomoi = $_POST["chisomoi"];
     $dongia = 2000;
-    $thanhtoan = ($chisomoi - $chisocu) * $dongia;
+    if($chisomoi < $chisocu){
+        $thanhtoan = "Chi so cu phai nho hon chi so moi";
+    }else{
+        $thanhtoan = ($chisomoi - $chisocu) * $dongia;
+    }
+    
     ?>
     <form method="post" action="index.php">
         <p>Thanh toán tiền điện</p>
@@ -23,9 +28,9 @@
         Chỉ số mới:
         <input type="number" name="chisomoi" value="<?php echo $chisomoi?>"><br>
         Đơn giá:
-        <input type="number" name="dongia" value="<?php echo $dongia ?>"><br>
+        <input type="number" name="dongia" value="<?php echo $dongia ?>" readonly><br>
         Số tiền thanh toán:
-        <input type="number" name="thanhtoan" readonly value="<?php echo $thanhtoan ?>"><br>
+        <input type="text" name="thanhtoan" readonly value="<?php echo $thanhtoan ?>"><br>
         <button>Tính</button>
     </form>
 </body>

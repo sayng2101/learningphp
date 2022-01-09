@@ -17,12 +17,11 @@
     }
     ?></div>
     Số thứ nhất: 
-    <input type="text" name="input1" value="<?php echo $so1 = $_POST["input1"];?>"><br>
+    <input type="text" name="input1" value="<?php echo $so1 = $_POST["input1"];?>" readonly><br>
     Số thứ hai:
-    <input type="text" name="input2" value="<?php echo $so2 = $_POST["input2"];?>"><br>
+    <input type="text" name="input2" value="<?php echo $so2 = $_POST["input2"];?>" readonly><br>
     Kết quả:
-    <input type="text" name="ketqua" 
-    ><br>
+    <input type="text" name="ketqua" value="<?php echo $so1 + $so2?>" readonly><br>
     <a href="index.php">Quay lại trang trước</a>
     </form>
     <?php

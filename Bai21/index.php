@@ -15,7 +15,7 @@
     }elseif($sob == 0) {
         $nghiem = "Phương trình vô số nghiệm";
     }else {
-        $nghiem = -$sob - $soa;
+        $nghiem = -$sob / $soa;
     }
     ?>
     <form action="index.php" method="post">
