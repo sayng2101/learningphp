@@ -19,7 +19,7 @@
         Cạnh B: 
         <input type="text" name="canhb" value="<?php echo $canhb ?>"><br>
         Cạnh huyền: 
-        <input type="text" name="canhhuyen" value="<?php echo $canhhuyen ?>"><br>
+        <input type="text" name="canhhuyen" value="<?php echo $canhhuyen ?>" readonly><br>
         <button>Tính</button>
     </form>
 </body>

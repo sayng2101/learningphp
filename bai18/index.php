@@ -13,7 +13,7 @@
     $ly = $_POST["ly"];
     $diemchuan = 20;
     $tongdiem = $toan + $ly + $hoa;
-    if($tongdiem >= $diemchuan){
+    if($tongdiem >= $diemchuan && $toan >= 5 && $ly >= 5 && $hoa >= 5){
         $kq = "Đỗ";
     }else {
         $kq = "Rớt";

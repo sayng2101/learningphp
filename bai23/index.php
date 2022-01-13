@@ -8,31 +8,33 @@
 </head>
 <body>
     <?php 
-        $canh1 =$_POST["canh1"];
-        $canh2 =$_POST["canh2"];
-        $canh3 =$_POST["canh3"];
-        if($canh1 < $canh2 + $canh3 && $canh2 < $canh1 + $canh2 && $canh3 < $canh1 + $canh2){
-            if($canh1*$canh1 == $canh2*$canh2+$canh3*$canh3 || $canh2*$canh2 == $canh1*$canh1+$canh3*$canh3 || $canh3*$canh3 == $canh1*$canh1+$canh2*$canh2){
+        $a =$_POST["a"];
+        $b =$_POST["b"];
+        $c =$_POST["c"];
+        if($a+$b>$c && $a+$c>$b && $b+$c>$a){
+            if($a==$b && $b ==$c){
+                $tamgiac = "Tam giác đều";
+            }elseif($a*$a==$b*$b+$c*$c || $b*$b==$a*$a+$c*$c || $c*$c== $a*$a+$b*$b){
                 $tamgiac = "Tam giác vuông";
-            }elseif($canh1 == $canh2 && $canh2 == $canh3){
+            }elseif($a==$b || $a==$c || $b==$c){
                 $tamgiac = "Tam giác cân";
-            }elseif($canh1*$canh1 > $canh2*$canh2+$canh3*$canh3 || $canh2*$canh2 > $canh1*$canh1+$canh3*$canh3 || $canh3*$canh3 > $canh1*$canh1+$canh2*$canh2){
-                $tamgiac = "Tam giác tu";
+            }elseif($a*$a > $b*$b+$c*$c || $b*$b > $a*$a+$c*$c || $c*$c > $a*$a+$b*$b){
+                $tamgiac = "Tam giác tù";
             }else{
                 $tamgiac = "Tam giác nhọn";
             }
         }else {
-            $tamgiac =  "Không là tam giác";
+            $tamgiac = "Không là tam giác";
         }
     ?>
     <form action="index.php" method="post">
         <p>Nhận dạng tam giác</p>
         Cạnh 1: 
-        <input type="text" name="canh1" value="<?php echo $canh1 ?>">(cm)<br>
+        <input type="text" name="a" value="<?php echo $a ?>">(cm)<br>
         Cạnh 2: 
-        <input type="text" name="canh2" value="<?php echo $canh2 ?>">(cm)<br>
+        <input type="text" name="b" value="<?php echo $b ?>">(cm)<br>
         Cạnh 3: 
-        <input type="text" name="canh3" value="<?php echo $canh3 ?>">(cm)<br>
+        <input type="text" name="c" value="<?php echo $c ?>">(cm)<br>
         Loại tam giác: 
         <input type="text" readonly value="<?php echo $tamgiac ?>"><br>
         <button>Nhận dạng</button>
